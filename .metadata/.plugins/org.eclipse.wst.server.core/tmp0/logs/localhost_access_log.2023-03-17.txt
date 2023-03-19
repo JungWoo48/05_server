@@ -1,0 +1,14 @@
+127.0.0.1 - - [17/Mar/2023:14:08:04 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [17/Mar/2023:14:08:05 +0900] "GET /ServletProject1/ HTTP/1.1" 200 1810
+0:0:0:0:0:0:0:1 - - [17/Mar/2023:14:08:05 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [17/Mar/2023:14:18:35 +0900] "GET /ServletProject1/example1.do?inputName=%EC%9E%84%EC%A0%95%EC%9A%B0&inputAge=25 HTTP/1.1" 200 42
+127.0.0.1 - - [17/Mar/2023:14:20:15 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [17/Mar/2023:14:20:15 +0900] "GET /ServletProject1/ HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Mar/2023:14:20:26 +0900] "GET /ServletProject1/example1.do?inputName=%EC%9E%84%EC%A0%95%EC%9A%B0&inputAge=24 HTTP/1.1" 200 40
+127.0.0.1 - - [17/Mar/2023:14:52:35 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [17/Mar/2023:14:52:35 +0900] "GET /ServletProject1/servlet/edu.kh.servlet.controller.ServletEx2 HTTP/1.1" 404 875
+127.0.0.1 - - [17/Mar/2023:15:03:35 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [17/Mar/2023:15:03:36 +0900] "GET /ServletProject1/example2.do HTTP/1.1" 500 147
+127.0.0.1 - - [17/Mar/2023:15:11:12 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [17/Mar/2023:15:11:12 +0900] "GET /ServletProject1/ HTTP/1.1" 200 3576
+0:0:0:0:0:0:0:1 - - [17/Mar/2023:15:11:20 +0900] "GET /ServletProject1/example2.do?orderer=%E3%85%8E%E3%85%8E%E3%85%8E%E3%84%B9&type=ice&coffee=%EB%9D%BC%EB%97%B4&opt=softly HTTP/1.1" 200 240
