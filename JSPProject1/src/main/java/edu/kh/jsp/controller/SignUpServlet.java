@@ -9,30 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/signup")
-public class SignUp extends HttpServlet {
+@WebServlet("/signUp")
+public class SignUpServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		// post방식 인코딩처리
 		req.setCharacterEncoding("UTF-8");
 		
-		String id = req.getParameter("userId");
-		String[] userPw = req.getParameterValues("userPw");
-		String name = req.getParameter("userName");
-		String email = req.getParameter("Email");
-		String[] hobby = req.getParameterValues("hobby");
-		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/signResult.jsp");
-		
-
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/signUpResult.jsp");
 		
 		dispatcher.forward(req, resp);
-		
-		
-		
-		
-		
-		
 	}
 }

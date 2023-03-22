@@ -19,5 +19,4 @@ public class JSTLServlet extends HttpServlet{
 		
 		dispatcher.forward(req, resp);
 	}
-
 }

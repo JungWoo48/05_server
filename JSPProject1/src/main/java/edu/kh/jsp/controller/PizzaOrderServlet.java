@@ -13,29 +13,30 @@ import javax.servlet.http.HttpServletResponse;
 public class PizzaOrderServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
+		
 		req.setCharacterEncoding("UTF-8");
 		
-		String size = req.getParameter("size");
+		String size = req.getParameter("size"); // R / L
 		
-		int amount = Integer.parseInt(req.getParameter("amount"));
+		int amount = Integer.parseInt( req.getParameter("amount") );
 		// Integer.parseInt("문자열") : 숫자 형태 String -> int 변환
 		
-		// (기본(10000)+ 사이즈(0/2000) * 수량(1~10)
+		// ( 기본(10000) + 사이즈(0 or 2000) ) * 수량(1~10)
 		int temp = 0;
 		if(size.equals("L")) temp = 2000;
 		
 		// 최종금액
 		int total = (10000 + temp) * amount;
 		
-		// JSP 요청 위임 객체 생성 (JSP 경로 지정)
+		
+		// JSP 요청 위임 객체 생성(JSP 경로 지정)
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/orderResult.jsp");
 		
-		
+		// req에 total값 세팅
 		req.setAttribute("tot", total);
 		
+		// req, resp 객체 JSP로 
 		dispatcher.forward(req, resp);
-		
 		
 	}
 }

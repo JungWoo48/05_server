@@ -7,14 +7,12 @@
     <title>JSP 프로젝트</title>
 </head>
 <body>
-    <h3>JSP 테스트1</h3>
+    <h3>JSP 테스트 1</h3>
 
-    <!--로그인
-        user01 / pass01 ! 로그인시 성공
+    <!-- 로그인 
+        user01 / pass01! 로그인 시 성공
     -->
-
-    <!-- action에는 프로젝트명/서비스요청주소
-         method에는 데이터 전달 방식-->
+            <!-- /프로젝트명/서비스요청주소    데이터전달방식(get/post) -->
     <form action="/JSPProject1/login" method="post">
         ID : <input type="text" name="inputId"> <br>
         PW : <input type="password" name="inputPw"> <br>
@@ -30,110 +28,35 @@
     <h3>JSP 테스트 2</h3>
 
     <form action="/JSPProject1/pizzaOrder" method="post">
-        피자 선택 (1만원) :
+        피자 선택(1만원) :
         <select name="pizza">
-            <option>컴비네이션 피자</option>
-            <option>블랙타이거 쉬림프 피자</option>
+            <option>콤비네이션 피자</option>
             <option>불고기 피자</option>
-            <option>베이컨 피자</option>
-            <option>포테이토 피자</option>
-            <option>치즈 피자</option>
+            <option>고구마 피자</option>
+            <option>하와이안 피자</option>
+            <option>통새우 피자</option>
         </select>
 
-        <br>
-        <br>
+        <br><br>
 
         사이즈
         <br>
         <label>
-            R<input type="radio" name="size" value="R">
+        R <input type="radio" name="size" value="R">
         </label>
 
         <br>
         <label>
-            L(+2000) <input type="radio" name="size" value="L">
+        L(+2,000) <input type="radio" name="size" value="L">
         </label>
 
-        <br>
-        <br>
+        <br><br>
 
         수량 : <input type="number" name="amount" min="1" max="10" value="1">
 
-        <br>
-        <br>
+        <br><br>
 
         <button>주문하기</button>
-    </form>
-
-    <hr>
-
-    <h1>회원가입(JSP버전)</h1>
-
-    <form action="/JSPProject1/signup" method="post">
-    <table>
-        <tr>
-            <td>아이디</td>
-            <td><input type="text" id="userId" name="userId"></td>
-        </tr>
-
-        <tr>
-            <td>비밀번호</td>
-            <td><input type="password" id="userPw" name="userPw"></td>
-        </tr>
-
-        <tr>
-            <td>비밀번호 확인</td>
-            <td><input type="password" id="userPw" name="userPw"></td>
-        </tr>
-
-        <tr>
-            <td>이름</td>
-            <td><input type="text" id="userName" name="userName"></td>
-        </tr>
-
-        <tr>
-            <td>이메일</td>
-            <td><input type="email" id="Email" name="Email"></td>
-        </tr>
-
-        <tr>
-            <td>취미</td>
-            <td>
-                <label for="study">공부</label>
-                <input type="checkbox" name="hobby" id="study">
-                <label for="game">게임</label>
-                <input type="checkbox" name="hobby" id="game">
-                <label for="healty">헬스</label>
-                <input type="checkbox" name="hobby" id="healty">
-            </td>
-        </tr>
-
-        <tr>
-            <td></td>
-            <td>
-                <label for="reading">독서</label>
-                <input type="checkbox" name="hobby" id="reading">
-                <label for="movie">영화</label>
-                <input type="checkbox" name="hobby" id="movie">
-                <label for="codding">코딩</label>
-                <input type="checkbox" name="hobby" id="codding">
-            </td>
-        </tr>
-
-        <tr>
-            <td></td>
-            <td><button>회원가입</button></td>
-        </tr>
-    </table>
-    </form>
-
-    <hr>
-
-    <form action="/JSPProject1/coffe" method="post">
-        커피 선택
-
-        <label>아메리카노</label>
-
     </form>
 </body>
 </html>
