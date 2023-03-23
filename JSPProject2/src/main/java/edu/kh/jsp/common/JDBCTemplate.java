@@ -39,7 +39,7 @@ public class JDBCTemplate {
 				// Map<String, String> 형태의 객체, XML 입출력 특화
 				
 				String filePath 
-					= JDBCTemplate.class.getResource("/edu/kh/jsp/sql/driver.xml").getPath();
+					= JDBCTemplate.class.getResource("/edu/kh/community/sql/member-sql.xml").getPath();
 				
 				prop.loadFromXML( new FileInputStream(filePath));
 				

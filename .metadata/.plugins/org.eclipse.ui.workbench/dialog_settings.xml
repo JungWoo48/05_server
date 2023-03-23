@@ -20,6 +20,7 @@
 		<item key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
 		<item key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID" value="false"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\suj00\OneDrive\바탕 화면\community"/>
 			<item value="C:\Users\suj00\OneDrive\바탕 화면\JSPProject2"/>
 			<item value="C:\Users\suj00\OneDrive\바탕 화면\JSPProject1"/>
 		</list>
