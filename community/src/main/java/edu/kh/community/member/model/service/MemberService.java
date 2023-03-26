@@ -3,6 +3,7 @@ package edu.kh.community.member.model.service;
 import static edu.kh.community.common.JDBCTemplate.*;
 
 import java.sql.Connection;
+import java.util.List;
 
 import edu.kh.community.member.model.dao.MemberDAO;
 import edu.kh.community.member.model.vo.Member;
@@ -24,5 +25,56 @@ public class MemberService {
 		
 		return member;
 	}
-	
+
+	/** 회원 전체 조회 서비스
+	 * @return
+	 */
+	public List<Member> selectAll() throws Exception{
+		Connection conn = getConnection();
+		
+		List<Member> memList = dao.selectAll(conn);
+		
+		close(conn);
+		
+		return memList;
+	}
+
+	/** 인증번호 DB 추가 서비스
+	 * @return
+	 */
+	public int insertCertification(String inputEmail, String cNumber) throws Exception{
+		Connection conn = getConnection();
+		
+		// 1) 입력한 이메일과 일치하는 값이 있으면 수정(update)
+		int result = dao.updateCertification(conn, inputEmail, cNumber);
+				
+		// 2) 입력한 이메일이 없는 경우 -> 처음으로 인증번호를 발급 (insert)
+		if(result ==0) {
+			result = dao.insertCertification(conn, inputEmail, cNumber);
+		}
+		
+		if(result > 0) commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+		
+		return 0;
+	}
+	 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

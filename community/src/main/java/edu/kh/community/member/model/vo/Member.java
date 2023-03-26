@@ -1,5 +1,6 @@
 package edu.kh.community.member.model.vo;
 
+@RequiredArgsConstructor
 public class Member {
 	
 	private int memberNo;

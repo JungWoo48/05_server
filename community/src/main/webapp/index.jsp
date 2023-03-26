@@ -42,6 +42,25 @@
             	<div id="result1" style="height: 150px;"></div>
 
                 <hr>
+                
+                <h3>회원목록 조회</h3>
+                <table border="1">
+              		<c:forEach var="member" items="${contextPath.memList }">
+              		
+    						<tr>
+    							<th>회원 번호</th>
+    							<th>이메일</th>
+    							<th>닉네임</th>
+    						</tr>
+    						
+    						<tr>
+    							<td>${member.memberNo }</td>
+    							<td>${member.memberEmail }</td>
+    							<td>${member.memberNickname }</td>
+    						</tr>
+    						
+    				</c:forEach>
+               </table>
             
             </section>
 
@@ -74,13 +93,27 @@
         
                     <!-- 회원가입 / ID/PW 찾기 -->
                     <article id="signUp-find-area">
-                        <a href="#">회원가입</a>
+                    
+                    	
+                    
+                    	<!-- WEV-INF폴더는 외부로부터 직접적으로 요청 할 수 없는 폴더이다
+                    		중요한 코드가 (자바 sql 설정등) 위치하는 폴더로서
+                    		외부에서 접근을 차단함
+                    		
+                    		-> servlet을 이용해 내부 접근(forward) 가능
+                    	
+                    	 -->
+                    
+                    
+                    
+                        <a href="${contextPath }/member/signUp">회원가입</a>
                         <span>|</span>
                         <a href="#">ID/PW찾기</a>
                     </article>
                 </form>
             </section>
         </section>
+        
 
     </main>
     

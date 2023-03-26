@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import edu.kh.community.member.model.vo.Member;
@@ -66,4 +68,102 @@ public class MemberDAO {
 		return member;
 	}
 
+	public List<Member> selectAll(Connection conn) throws Exception {
+		
+		List<Member> memList = new ArrayList<>();	
+		
+		try {
+			
+			String sql = prop.getProperty("selectAll");
+			
+			stmt = conn.createStatement();
+			
+	
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				
+				
+				int memberNo = rs.getInt("MEMBER_NO");
+				String memberEmail = rs.getString("MEMBER_EMAIL");
+				String memberPw = rs.getString("MEMBER_PW");
+				String memberNickname = rs.getString("MEMBER_NICK");
+				String memberTel = rs.getString("MEMBER_TEL");
+				String memberAddress = rs.getString("MEMBER_ADRESS");
+				String profileImage = rs.getString("PROFILE_IMG");
+				String enrollDate = rs.getString("ENROLL_DT");
+				String secessionFlag = rs.getString("SECESSION_FL");
+				
+				memList.add(
+					new Member(memberNo + memberEmail + memberPw  + memberNickname + memberTel + memberAddress + profileImage + enrollDate + secessionFlag)
+					);
+			}
+			
+		} finally {
+			close(rs);
+			close(stmt);
+			
+		}
+		return memList;
+	}
+
+	/** 인증번호 확인DAO
+	 * @param conn
+	 * @param inputEmail
+	 * @param cNumber
+	 * @return
+	 * @throws Exception
+	 */
+	public int updateCertification(Connection conn, String inputEmail, String cNumber) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("updateCertification");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, cNumber);
+			pstmt.setString(2, inputEmail);
+			
+			result = pstmt.executeUpdate();
+			
+			
+			
+		} finally {
+			
+		}
+		return 0;
+	}
+
+	/** 인증번호 생성  DAO
+	 * @param conn
+	 * @param inputEmail
+	 * @param cNumber
+	 * @return
+	 */
+	public int insertCertification(Connection conn, String inputEmail, String cNumber) throws Exception{
+		int result = 1;
+		
+		try {
+			
+			String sql = prop.getProperty("insertCertification");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, inputEmail);
+			pstmt.setString(2,  cNumber);
+			
+			result = pstmt.executeUpdate();
+			
+			
+		} finally {
+			close(pstmt);
+			
+		}
+		return 1;
+	}
+
+	
 }
