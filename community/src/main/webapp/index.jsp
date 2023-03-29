@@ -55,8 +55,8 @@
                     </thead>
 
 
-                    <tbody id="memberList">
-
+                  <tbody id="memberList">
+  						<!-- 
                         <tr>
                             <td>1</td>
                             <td>user01@kh.or.kr</td>
@@ -73,9 +73,9 @@
                             <td>3</td>
                             <td>user03@kh.or.kr</td>
                             <td>유저삼</td>
-                        </tr>
+                        </tr>-->
 
-                    </tbody>
+                    </tbody> 
                 </table>
                 
 
@@ -139,7 +139,7 @@
 
 		                        <a href="${contextPath}/member/signUp">회원가입</a> 
 
-
+							
 
 		                        <span>|</span>
 		                        <a href="#">ID/PW 찾기</a>
@@ -161,7 +161,7 @@
                                 </c:if>
 
                                 <c:if test="${!empty loginMember.profileImage}">
-                                    <img src="${contextPath}${loginMember.profileImage}" id="member-profile">
+                                    <img src="${contextPath}/${loginMember.profileImage}" id="member-profile">
                                 </c:if>
 
             				</a>

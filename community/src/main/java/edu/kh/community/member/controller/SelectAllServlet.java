@@ -14,24 +14,27 @@ import com.google.gson.Gson;
 import edu.kh.community.member.model.service.MemberService;
 import edu.kh.community.member.model.vo.Member;
 
-
 @WebServlet("/member/selectAll")
 public class SelectAllServlet extends HttpServlet{
-	
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		try {
-			
 			MemberService service = new MemberService();
 			
-			List<Member> memList = service.selectAll();
+			List<Member> list = service.selectAll();
 			
-			new Gson().toJson(memList, resp.getWriter());
+			// Gson 라이브러리를 이용해서 JSON 형태로 변환 후 응답
+			new Gson().toJson( list, resp.getWriter() );
+		
 			
-		} catch (Exception e) {
+		}catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+	
 	}
-
+	
+	
 }
